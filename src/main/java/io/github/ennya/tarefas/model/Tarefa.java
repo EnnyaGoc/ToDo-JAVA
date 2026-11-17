@@ -1,5 +1,6 @@
 package io.github.ennya.model;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Tarefa {
     private Integer id;
@@ -15,6 +16,16 @@ public class Tarefa {
         this.nome = nome;
         this.prioridade = prioridade;
         this.status = Status.PENDENTE;
+    }
+
+    public Tarefa(Integer id, String nome, String descricao, Status status,
+              Prioridade prioridade, LocalDateTime dataConclusao) {
+        this.id = id;
+        setNome(nome);
+        this.descricao = descricao;
+        this.status = status;
+        this.prioridade = prioridade;
+        this.dataConclusao = dataConclusao;
     }
 
     public void concluir() {
